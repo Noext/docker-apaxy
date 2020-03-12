@@ -17,6 +17,12 @@ export APAXY_LOG_FILE=${APAXY_LOG_FILE:-/data/log/apaxy.log}
 
 mkdir -p "$(dirname ${APAXY_LOG_FILE})"
 
+
+echo $APACHE_SERVER_ROOT
+echo $APAXY_THEME_PATH
+echo $APAXY_THEME_ALIAS
+echo $FOLDERNAME
+echo $APAXY_LOG_FILE
 #
 # Ensure the server root and context path exist
 #
