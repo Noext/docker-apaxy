@@ -9,6 +9,7 @@ TraceEnable off
 	DirectoryIndex index.html
 
 	Alias "${APAXY_THEME_ALIAS}" "${APAXY_THEME_PATH}"
+	Alias "${APAXY_SUBFOLDER}" "${APACHE_SERVER_ROOT}"
 
 	#
 	# Allow access to the icons and stylesheets in the Apaxy
@@ -40,6 +41,7 @@ TraceEnable off
 	</Directory>
 	
 	LogLevel warn
+	CustomLog "${APAXY_ACCESS_LOG_FILE}" combined
 	ErrorLog "${APAXY_LOG_FILE}"
         
 </VirtualHost>

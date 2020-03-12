@@ -14,6 +14,8 @@ export APAXY_THEME_PATH=${APAXY_THEME_PATH:-/data/apaxy_theme}
 export APAXY_THEME_ALIAS=${APAXY_THEME_ALIAS:-/.apaxy_theme}
 export FOLDERNAME="${FOLDERNAME:-/.apaxy_theme}"
 export APAXY_LOG_FILE=${APAXY_LOG_FILE:-/data/log/apaxy.log}
+export APAXY_ACCESS_LOG_FILE=${APAXY_ACCESS_LOG_FILE:-/data/log/apaxy-access.log}
+export APAXY_SUBFOLDER=${APAXY_SUBFOLDER:-/}
 
 mkdir -p "$(dirname ${APAXY_LOG_FILE})"
 
