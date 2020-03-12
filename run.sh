@@ -35,7 +35,7 @@ mkdir -p /data/webroot/"${APAXY_CONTEXT_PATH}"
 #   2. Evaluate the virtualhost template and save the result in the 
 #   sites-enabled/apaxy.conf file 
 #
-sed -i.bak 's;/{FOLDERNAME}/theme;'"${APAXY_THEME_ALIAS}"';g' \
+sed -i.bak 's;{FOLDERNAME}/theme;'"${APAXY_THEME_ALIAS}"';g' \
     Apaxy/apaxy/htaccess.txt
 APAXY_CONFIGURATIONS="$(cat Apaxy/apaxy/htaccess.txt)"
 mkdir -p /usr/local/apache2/conf/sites-enabled/
