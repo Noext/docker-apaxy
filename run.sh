@@ -8,14 +8,12 @@
 #
 export APAXY_CONTEXT_PATH=${APAXY_CONTEXT_PATH}
 
-#
-# Non-configurable constants
-#
-export APACHE_SERVER_ROOT=/data/webroot
-export APAXY_THEME_PATH=/data/apaxy_theme
-export APAXY_THEME_ALIAS=/.apaxy_theme
+
+export APACHE_SERVER_ROOT=${APACHE_SERVER_ROOT:-/data/webroot}
+export APAXY_THEME_PATH=${APAXY_THEME_PATH:-/data/apaxy_theme}
+export APAXY_THEME_ALIAS=${APAXY_THEME_ALIAS:-/.apaxy_theme}
 export FOLDERNAME="${APAXY_THEME_ALIAS}"
-export APAXY_LOG_FILE=/data/log/apaxy.log
+export APAXY_LOG_FILE=${APAXY_LOG_FILE:-//data/log/apaxy.log}
 
 mkdir -p "$(dirname ${APAXY_LOG_FILE})"
 
