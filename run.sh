@@ -9,6 +9,10 @@
 export APAXY_CONTEXT_PATH=${APAXY_CONTEXT_PATH}
 
 
+
+export FOOTER-MESSAGE=${FOOTER-MESSAGE:-""}
+export HEADER-MESSAGE=${HEADER-MESSAGE:-""}
+
 export APACHE_SERVER_ROOT=${APACHE_SERVER_ROOT:-/data/webroot}
 export APAXY_THEME_PATH=${APAXY_THEME_PATH:-/data/apaxy_theme}
 export APAXY_THEME_ALIAS=${APAXY_THEME_ALIAS:-/.apaxy_theme}
@@ -37,8 +41,7 @@ mkdir -p /data/webroot/"${APAXY_CONTEXT_PATH}"
 #   2. Evaluate the virtualhost template and save the result in the 
 #   sites-enabled/apaxy.conf file 
 #
-sed -i.bak 's;{FOLDERNAME}/theme;'"${APAXY_THEME_ALIAS}"';g' \
-    Apaxy/apaxy/htaccess.txt
+sed -i.bak 's;{FOLDERNAME}/theme;'"${APAXY_THEME_ALIAS}"';g' Apaxy/apaxy/htaccess.txt
 APAXY_CONFIGURATIONS="$(cat Apaxy/apaxy/htaccess.txt)"
 mkdir -p /usr/local/apache2/conf/sites-enabled/
 eval "echo \"`cat "/apaxy.tpl"`\"" > \
@@ -89,6 +92,10 @@ fi
 echo "Starting the Aapche server, this may take several seconds..."
 apachectl start
 
+sed -i.bak 's;{FOLDERNAME};'"${APAXY_THEME_ALIAS}"';g' "${APAXY_THEME_PATH}"/header.html
+sed -i.bak 's;{FOLDERNAME};'"${APAXY_THEME_ALIAS}"';g' "${APAXY_THEME_PATH}"/footer.html
+sed -i.bak 's;{FOOTER-MESSAGE};'"${FOOTER-MESSAGE}"';g' "${APAXY_THEME_PATH}"/footer.html
+sed -i.bak 's;{HEADER-MESSAGE};'"${HEADER-MESSAGE}"';g' "${APAXY_THEME_PATH}"/header.html
 #
 # Ensure the container keeps running
 #
