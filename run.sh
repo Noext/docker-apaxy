@@ -10,8 +10,8 @@ export APAXY_CONTEXT_PATH=${APAXY_CONTEXT_PATH}
 
 
 
-export FOOTER-MESSAGE=${FOOTER-MESSAGE:-""}
-export HEADER-MESSAGE=${HEADER-MESSAGE:-""}
+export FOOTER_MESSAGE=${FOOTER_MESSAGE:-""}
+export HEADER_MESSAGE=${HEADER_MESSAGE:-""}
 
 export APACHE_SERVER_ROOT=${APACHE_SERVER_ROOT:-/data/webroot}
 export APAXY_THEME_PATH=${APAXY_THEME_PATH:-/data/apaxy_theme}
@@ -94,8 +94,8 @@ apachectl start
 
 sed -i.bak 's;{FOLDERNAME};'"${APAXY_THEME_ALIAS}"';g' "${APAXY_THEME_PATH}"/header.html
 sed -i.bak 's;{FOLDERNAME};'"${APAXY_THEME_ALIAS}"';g' "${APAXY_THEME_PATH}"/footer.html
-sed -i.bak 's;{FOOTER-MESSAGE};'"${FOOTER-MESSAGE}"';g' "${APAXY_THEME_PATH}"/footer.html
-sed -i.bak 's;{HEADER-MESSAGE};'"${HEADER-MESSAGE}"';g' "${APAXY_THEME_PATH}"/header.html
+sed -i.bak 's;{FOOTER-MESSAGE};'"${FOOTER_MESSAGE}"';g' "${APAXY_THEME_PATH}"/footer.html
+sed -i.bak 's;{HEADER-MESSAGE};'"${HEADER_MESSAGE}"';g' "${APAXY_THEME_PATH}"/header.html
 #
 # Ensure the container keeps running
 #
