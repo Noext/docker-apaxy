@@ -26,7 +26,7 @@ TraceEnable off
 	# 
 	<Directory "${APACHE_SERVER_ROOT}">	
 	    Options FollowSymLinks
-	    AllowOverride None
+	    AllowOverride All
 	    Require all granted
 	</Directory>
 
